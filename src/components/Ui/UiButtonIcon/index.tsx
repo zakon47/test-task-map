@@ -1,0 +1,1 @@
+export { UiButtonIcon } from "./UiButtonIcon";

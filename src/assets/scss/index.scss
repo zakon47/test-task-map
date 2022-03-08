@@ -1,0 +1,59 @@
+@import "normalize";
+@import "global";
+@import "vars";
+
+*{
+  box-sizing: border-box;
+}
+html {
+  font-size: 9px;
+}
+body {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1921px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 2300px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 2700px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 3400px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 4000px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 5000px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 7000px) {
+  html {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 10000px) {
+  html {
+    font-size: 50px;
+  }
+}

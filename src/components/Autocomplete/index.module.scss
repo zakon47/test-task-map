@@ -1,0 +1,38 @@
+.wrap{
+  position: relative;
+  max-width: 30rem;
+  width: 100%;
+}
+.input{
+  height: 4rem;
+  padding: 0 1.5rem;
+  border: 0;
+  width: 100%;
+  -webkit-border-radius: .7rem;
+  -moz-border-radius: .7rem;
+  border-radius: .7rem;
+}
+.ul{
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 0.1rem 1rem #0000002e;
+  border: none;
+  width: 100%;
+  & li{
+    border-bottom: 1px solid var(--bg-color);
+    cursor: pointer;
+    padding: 1rem;
+    color: var(--black);
+    &:hover{
+      background: var(--secondary);
+    }
+    &:last-child{
+      border: none;
+    }
+  }
+}

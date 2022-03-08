@@ -1,0 +1,21 @@
+.wrap{
+  -webkit-border-radius: .7px;
+  -moz-border-radius: .7px;
+  border-radius: .7px;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: .2s;
+  &:hover{
+    background: rgba(#fff, .1);
+  }
+  & img{
+    display: block;
+    margin: auto;
+  }
+}
+.active{
+  background: rgba(#fff, .2);
+}
