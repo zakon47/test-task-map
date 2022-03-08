@@ -1,12 +1,12 @@
 import ClassName from "classnames";
-import { CSSProperties, FC, useState } from "react";
+import { CSSProperties, FC } from "react";
 
-import BAR from "../../../assets/svg/bar.svg";
-import SEARCH from "../../../assets/svg/search.svg";
-import { Autocomplete } from "../../../components/Autocomplete";
-import { IPrometheusItemData } from "../../../components/PrometheusList/components/PrometheusItem/PrometheusItem";
-import { UiButtonIcon } from "../../../components/Ui/UiButtonIcon";
-import { Coordinates } from "../../../models/coordinates";
+import BAR from "../../assets/svg/bar.svg";
+import SEARCH from "../../assets/svg/search.svg";
+import { Coordinates } from "../../models/coordinates";
+import { Autocomplete } from "../Autocomplete";
+import { IPrometheusItemData } from "../PrometheusList/components/PrometheusItem/PrometheusItem";
+import { UiButtonIcon } from "../Ui/UiButtonIcon";
 import { UiContainer } from "../UiContainer";
 import s from "./index.module.scss";
 
@@ -37,7 +37,8 @@ const UiHeader: FC<IProps> = ({
             <>
               <div className={s.title}>Edit location</div>
               <div className={s.subtitle}>
-                {selectedItem.title}{" "}
+                {selectedItem.title}
+                {" 1"}
                 {[
                   selectedItem.coords.lng.toFixed(5),
                   selectedItem.coords.lat.toFixed(5),

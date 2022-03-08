@@ -1,18 +1,18 @@
 import { useJsApiLoader } from "@react-google-maps/api";
 import axios from "axios";
 import _ from "lodash-es";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { v4 as uuidv4 } from "uuid";
 
 import { Map } from "../../components/Map";
 import { PrometheusList } from "../../components/PrometheusList";
 import { IPrometheusItemData } from "../../components/PrometheusList/components/PrometheusItem/PrometheusItem";
-import { Layout } from "../../layouts/Layout";
+import { UiHeader } from "../../components/UiHeader";
 import { Coordinates } from "../../models/coordinates";
 import { Weather } from "../../models/responses/weather";
 import { ENV } from "../../utils/env";
-import { defaultCenter, getBrowserLocation } from "../../utils/geo/geo";
+import { defaultCenter } from "../../utils/geo/geo";
 import { useLocalStorage } from "../../utils/localStorage/useLocalStorage";
 import s from "./index.module.scss";
 
@@ -132,34 +132,41 @@ const PageHome = () => {
   };
 
   return (
-    <Layout
-      onToggleSearch={handleToggleSearch}
-      isOpenSearch={openMap}
-      isLoaded={isLoaded}
-      selectedItem={selectedItem}
-      onSelectCoords={handleSelectCoords}
-    >
+    <>
       <Helmet>
-        <title>Главная</title>
+        <title>Home page</title>
       </Helmet>
-      <div className={s.wrap}>
-        {openMap ? (
-          <Map
-            selectedItem={selectedItem}
-            center={mapCenter}
-            isLoaded={isLoaded}
-            onSelectCoords={handleSelectCoords}
-          />
-        ) : (
-          <PrometheusList
-            data={dataItems || []}
-            addItem={handleAddNewItem}
-            deleteItem={handleDeleteItem}
-            editItem={handleEditItem}
-          />
-        )}
+      <div className={s.wrapLayout}>
+        <UiHeader
+          onToggleSearch={handleToggleSearch}
+          isOpenSearch={openMap}
+          isLoaded={isLoaded}
+          selectedItem={selectedItem}
+          onSelectCoords={handleSelectCoords}
+        />
+        <div className={s.content}>
+          <div className={s.contentIn}>
+            <div className={s.wrap}>
+              {openMap ? (
+                <Map
+                  selectedItem={selectedItem}
+                  center={mapCenter}
+                  isLoaded={isLoaded}
+                  onSelectCoords={handleSelectCoords}
+                />
+              ) : (
+                <PrometheusList
+                  data={dataItems || []}
+                  addItem={handleAddNewItem}
+                  deleteItem={handleDeleteItem}
+                  editItem={handleEditItem}
+                />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

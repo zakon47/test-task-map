@@ -1,8 +1,8 @@
 import ClassName from "classnames";
 import { FC } from "react";
 
-import { UiContainer } from "../../layouts/components/UiContainer";
 import { UiButton } from "../Ui/UiButton";
+import { UiContainer } from "../UiContainer";
 import { PrometheusItem } from "./components/PrometheusItem";
 import { IPrometheusItemData } from "./components/PrometheusItem/PrometheusItem";
 import s from "./index.module.scss";
